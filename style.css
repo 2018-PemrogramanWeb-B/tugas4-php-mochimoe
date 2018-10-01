@@ -11,7 +11,7 @@ h2 {
 
 /* Contact Form */
 
-input, textarea {
+input{
 	padding: 10px;
 	border: 1px solid #E5E5E5;
 	width: 200px;
@@ -21,15 +21,8 @@ input, textarea {
 			
 }
 
-textarea {
-	width: 400px;
-	height: 150px;
-	max-width: 400px;
-	line-height: 18px;
-}
 
-input:hover, textarea:hover,
-input:focus, textarea:focus {
+input:hover,input:focus {
 	border-color: 1px solid #C9C9C9;
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
 	-moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;

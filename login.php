@@ -15,34 +15,21 @@
 			}
 
 		if ($_SERVER["REQUEST_METHOD"]=="POST") {
-			if(empty($_POST["username"]) || $user!="aisyahtria" && $pass!="ais2202"){
+			if($user!="aisyahtria" && $pass!="ais2202"){
+				header("location: tugasphp.php");
+			}
+			elseif (empty($_POST["username"]) && empty($_POST["password"])) {
 				$userErr = "Username is required";
 			} 
+			
+			elseif(!preg_match("/^[a-zA-Z ]*$/", $user)){
+				$userErr = "Only letter and white space allowed";
+			}
 			else{
 				$_SESSION['login'] = $user;
 				header('location: datetime.php');
 			}
-			if(!preg_match("/^[a-zA-Z ]*$/", $user)){
-				$userErr = "Only letter and white space allowed";
-			}
-		if (empty($_POST["password"]) || $pass!="ais2202" && $pass!="aisyahtria") {
-			header("location: tugasphp.php");
-			$passErr = "Password is required";
-
-			}
-			else{
-				$_SESSION['login'] = $pass;
-				header('location: datetime.php');
-			}
-			if(!preg_match("/^[a-zA-Z0-9]*$/", $pass)){
-				$passErr = "Only letter and number format allowed";
-			}
 		}
-
-
-
-
- 	
 	?>
 </body>
 </html>
